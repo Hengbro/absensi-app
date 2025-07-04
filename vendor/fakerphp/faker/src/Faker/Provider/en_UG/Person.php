@@ -47,7 +47,7 @@ class Person extends \Faker\Provider\Person
         'Sam', 'Samson', 'Sean', 'Shawn', 'Sid', 'Sidney', 'Solomon', 'Steve', 'Stevie', 'Stewart', 'Stuart',
         'Taylor', 'Theodore', 'Thomas', 'Timmy', 'Timothy', 'Titus', 'Tom', 'Tony', 'Travis', 'Trevor', 'Troy', 'Trystan', 'Tyler', 'Tyson',
         'Victor', 'Vince', 'Vincent', 'Vinnie',
-        'Walter', 'Warren', 'Wilford', 'Wilfred', 'Will', 'William', 'Willis', 'Willy', 'Wilson',
+        'Walter', 'Warren', 'Wilford', 'Wilfred', 'Will', 'William', 'Willis', 'Willy', 'Wilson','Hengki'
     ];
 
     protected static $firstNameFemale = [

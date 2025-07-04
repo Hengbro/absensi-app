@@ -25,19 +25,19 @@ final class PositionTable extends PowerGridComponent
         );
     }
 
-    // public function header(): array
-    // {
-    //     return [
-    //         Button::add('bulk-checked')
-    //             ->caption(__('Hapus'))
-    //             ->class('btn btn-danger border-0')
-    //             ->emit('bulkCheckedDelete', []),
-    //         Button::add('bulk-edit-checked')
-    //             ->caption(__('Edit'))
-    //             ->class('btn btn-success border-0')
-    //             ->emit('bulkCheckedEdit', []),
-    //     ];
-    // }
+    public function header(): array
+    {
+        return [
+            Button::add('bulk-checked')
+                ->caption(__('Hapus'))
+                ->class('btn btn-danger border-0')
+                ->emit('bulkCheckedDelete', []),
+            Button::add('bulk-edit-checked')
+                ->caption(__('Edit'))
+                ->class('btn btn-success border-0')
+                ->emit('bulkCheckedEdit', []),
+        ];
+    }
 
     public function bulkCheckedDelete()
     {

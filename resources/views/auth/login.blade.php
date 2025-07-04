@@ -10,9 +10,8 @@
     <div class="container text-center">
         <div class="mx-auto bg-white shadow-sm p-4 rounded" 
              style="min-width: 300px; max-width: 400px; width: 100%;">
-            <h4 class="text-dark font-weight-normal">Selamat datang</h4>
-            <p class="text-muted">Silakan masuk untuk absensi.</p>
-            <form method="POST" action="{{ route('auth.login') }}" id="login-form" class="needs-validation" novalidate="">
+            <img src="../assets/images/logoabsensisekolah.jpeg" width="180" alt="">
+            <form method="POST" action="{{ route('auth.login') }}" id="login-form" class="needs-validation mt-5" novalidate="">
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInputEmail" name="email"
                            placeholder="name@example.com" required>

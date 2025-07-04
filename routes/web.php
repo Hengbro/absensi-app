@@ -63,6 +63,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/absensi/{attendance}', [HomeController::class, 'show'])->name('show');
         Route::get('/absensi/{attendance}/permission', [HomeController::class, 'permission'])->name('permission');
+        Route::post('/change-password', [EmployeeController::class, 'changePassword'])->name('profile.change-password');
+
     });
 
     Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');

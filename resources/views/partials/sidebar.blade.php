@@ -1,5 +1,9 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
     <div class="position-sticky pt-3">
+        <div class="text-center mb-3">
+            <img src="{{ asset('assets/images/logoabsensisekolah.jpeg') }}" alt="Logo"
+                style="height: 80px; width: 80px; object-fit: contain;">
+        </div>
         <ul class="nav flex-column">
             @if (auth()->user()->isAdmin() or auth()->user()->isOperator())
             <li class="nav-item">

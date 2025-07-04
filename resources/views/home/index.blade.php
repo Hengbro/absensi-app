@@ -49,9 +49,38 @@
                                 auth()->user()->created_at->format('d M Y') }})</span>
                         </li>
                     </ul>
+                    <button class="btn btn-sm btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ubahPasswordModal">
+                        Ubah Password
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Modal Ubah Password -->
+<div class="modal fade" id="ubahPasswordModal" tabindex="-1" aria-labelledby="ubahPasswordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ubahPasswordModalLabel">Ubah Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        @livewire('change-password-form')
+      </div>
+    </div>
+  </div>
+</div>
+
+@push('scripts')
+<script>
+    document.addEventListener('livewire:load', function () {
+        Livewire.on('password-changed', () => {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('ubahPasswordModal'));
+            if (modal) modal.hide();
+        });
+    });
+</script>
+@endpush
+
 @endsection

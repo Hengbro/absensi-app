@@ -15,6 +15,7 @@ class EmployeeCreateForm extends Component
     public Collection $roles;
     public Collection $positions;
 
+
     public function mount()
     {
         $this->positions = Position::all();
@@ -75,6 +76,44 @@ class EmployeeCreateForm extends Component
 
         redirect()->route('employees.index')->with('success', "Ada ($affected) data karyawaan yang berhasil ditambahkan.");
     }
+
+
+    // public function updatePassword()
+    // {
+    //     // cara lebih cepat, dan kemungkinan data role tidak akan diubah/ditambah
+    //     $selectedUserId = join(',', $this->roles->pluck('id')->toArray());
+    //     // $roleIdRuleIn = join(',', Role::all()->pluck('id')->toArray());
+
+    //     // setidaknya input pertama yang hanya required,
+    //     // karena nanti akan difilter apakah input kedua dan input selanjutnya apakah berisi
+    //     $this->validate([
+    //         'employees.*.id' => 'required|in:' . $selectedUserId,
+    //         'employees.*.position_id' => 'required|in:' . $positionIdRuleIn,
+    //     ]);
+    //     // cek apakah no. telp yang diinput unique
+    //     $phoneNumbers = array_map(function ($employee) {
+    //         return trim($employee['phone']);
+    //     }, $this->employees);
+    //     $uniquePhoneNumbers = array_unique($phoneNumbers);
+
+    //     if (count($phoneNumbers) != count($uniquePhoneNumbers)) {
+    //         // layar browser ke paling atas agar user melihat alert error
+    //         $this->dispatchBrowserEvent('livewire-scroll', ['top' => 0]);
+    //         return session()->flash('failed', 'Pastikan input No. Telp tidak mangandung nilai yang sama.');
+    //     }
+
+    //     // alasan menggunakan create alih2 mengunakan ::insert adalah karena tidak looping untuk menambahkan created_at dan updated_at
+    //     $affected = 0;
+    //     foreach ($this->employees as $employee) {
+    //         if (trim($employee['password']) === '') $employee['password'] = '123';
+    //         $employee['password'] = Hash::make($employee['password']);
+    //         User::create($employee);
+    //         $affected++;
+    //     }
+
+    //     redirect()->route('employees.index')->with('success', "Ada ($affected) data karyawaan yang berhasil ditambahkan.");
+    // }
+
 
     public function render()
     {
